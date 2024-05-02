@@ -1,0 +1,55 @@
+.navbar {
+  max-width: 1200px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px 0px 10px;
+
+  .nav-title {
+    font-family: "Gatile";
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .nav-items {
+    display: flex;
+    gap: 20px;
+    a {
+      all: unset;
+      cursor: pointer;
+    }
+  }
+
+  .nav-message {
+    display: flex;
+    align-items: center;
+    background-color: #9d968b;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 400;
+  }
+
+  .nav-connected {
+    display: flex;
+    align-items: center;
+    background-color: #d39738;
+    padding: 10px;
+    border-radius: 10px;
+    p {
+      font-weight: 400;
+    }
+  }
+}
+
+hr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #9d968b;
+  margin: 40px;
+}
