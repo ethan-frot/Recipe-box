@@ -1,6 +1,7 @@
 @import "_header.scss";
 @import "_login.scss";
 @import "_recipes.scss";
+@import "_forms.scss";
 
 @font-face {
   font-family: "Gatile";
@@ -62,25 +63,4 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-.input-text,
-.input-submit {
-  padding: 5px;
-  border: 2px solid #fff3e0;
-  border-radius: 3px;
-  font-size: 16px;
-  outline: none;
-  color: black;
-
-  &:hover {
-    border-color: #9d968b;
-  }
-}
-
-.input-submit {
-  cursor: pointer;
-  color: #fff3e0;
-  border: 2px solid #d39738;
-  background-color: #d39738;
 }

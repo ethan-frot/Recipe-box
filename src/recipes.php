@@ -22,44 +22,64 @@ $recipes = $request->fetchAll(PDO::FETCH_ASSOC);
     <!-- Show data in HTML  -->
 
     <section id="post-list" class="container">
-        <h1>Welcome <span class="title"><?php echo $_SESSION['username'] ?></span>, you can see your recipes here</h1>
-        <br>
-        <ul>
+        <div class="recipe-header-container">
+            <h1 class="recipe-header-title">Welcome <span class="title"><?php echo $_SESSION['username'] ?></span>, <br>you
+                can see your recipes here</h1>
+            <a class="new-recipe-button" href="./new-recipe.php"><i class="fa-regular fa-square-plus"></i></a>
+        </div>
+        <div class="recipes-container">
             <?php if (!$recipes) : ?>
                 <span class="no-recipes"> Il n'y a aucune recette </span>
             <?php else : ?>
-                <?php foreach ($recipes as $recipe) : ?>
-                    <div>
-                    <img class="login-img" src="<?= $recipe['image_src'] ?>"/>
-                    <div>
+            <?php foreach ($recipes as $recipe) : ?>
+                <div class="recipe-img" style="background-image: url('<?= $recipe['image_src'] ?>')">
+                    <h1 class="recipe-img-title">
                         <?php echo $recipe['name']; ?>
-                        <div>
+                    </h1>
+                    <div class="interactive-buttons">
+                        <a class="interactive-button" href="./update-recipe.php?id=<?= $recipe['id'] ?>">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <a class="interactive-button" href="./duplicate-recipe.php?id=<?= $recipe['id'] ?>">
+                            <i class="fa-solid fa-clone"></i>
+                        </a>
+                        <a class="interactive-button"
+                           href="./scripts/remove-recipe-script.php?id=<?= $recipe['id'] ?>">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="recipe-component">
+                    <div class="recipe-step-container">
+                        <h1 class="recipe-title">Steps</h1>
+                        <ol class="styled-list">
+                            <?php $steps = preg_split('/;\s*/', $recipe['steps']); ?>
+                            <?php foreach ($steps as $index => $step) : ?>
+                                <li class="order-items">
+                                    <span class="order-number"><?php echo $index + 1; ?></span>
+                                    <?php echo $step; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ol>
+                    </div>
+
+                    <div class="recipe-ingredient-container">
+                        <h1 class="recipe-title ingredient-title">Ingredients</h1>
+                        <hr>
+                        <div class="ingredients-container">
                             <?php $ingredients = preg_split('/;\s*/', $recipe['ingredients']); ?>
                             <?php foreach ($ingredients as $ingredient) : ?>
-                                <li><?php echo $ingredient; ?></li>
+                                <p class="ingredient"><?php echo $ingredient; ?></p>
                             <?php endforeach; ?>
                         </div>
-                        <ul>
-                            <?php $steps = preg_split('/;\s*/', $recipe['steps']); ?>
-                            <?php foreach ($steps as $step) : ?>
-                                <li><?php echo $step; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
                     </div>
-                    <a href="./scripts/remove-recipe-script.php?id=<?= $recipe['id'] ?>">
-                        <i class="fa-solid fa-trash" style="color: black;"></i>
-                    </a>
-                    <a href="./modify-recipe.php?id=<?= $recipe['id'] ?>">
-                        <i class="fa-solid fa-pen-to-square" style="color: black;"></i>
-                    </a>
-                    <a href="./duplicate-recipe.php?id=<?= $recipe['id'] ?>">
-                        <i class="fa-solid fa-clone" style="color: black;"></i>
-                    </a>
-                <?php endforeach; ?>
-                    </div>
-            <?php endif ?>
-        </ul>
+                </div>
+                <hr>
+            <?php endforeach; ?>
+        </div>
+        <?php endif ?>
+        </div>
     </section>
-    <a href="./new-recipe.php">Add new recipe</a>
 
 <?php require_once 'parts/footer.php'; ?>

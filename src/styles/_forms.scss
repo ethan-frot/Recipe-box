@@ -1,0 +1,32 @@
+.form-title {
+  font-family: "Gatile";
+  font-size: 32px;
+  letter-spacing: 6px;
+}
+
+.form-input,
+.form-button {
+  all: unset;
+  border: 2px solid #d39738;
+  border-radius: 10px;
+  width: 80vw;
+  padding: 10px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #d39738;
+  }
+}
+
+.form-label {
+  color: #9d968b;
+}
+
+.login-form {
+  width: 20vw;
+}

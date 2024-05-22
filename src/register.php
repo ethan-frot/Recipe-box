@@ -3,19 +3,18 @@
 <div class="container">
     <div class="wrap-container">
         <div class="left-container">
-            <img class="login-img" src="assets/register.jpg">
+            <div class="login-img" style="background-image: url('./assets/register.jpg');"></div>
             <h1 class="title">Register page</h1>
-            <p class="login-subtitle">By register in here, you will have your own account on <span class="login-title">Recipe box</span></p>
         </div>
         <div class="vertical-line"></div>
         <div class="right-container">
-            <h1 class="title">Recipe box</h1>
+            <h1 class="form-title">Recipe box</h1>
             <form class="form" action="scripts/register-script.php" method="POST">
                 <div class="input-container">
-                    <label for="username">Username</label>
-                    <input class="input-text" type="text" placeholder="Enter username" name="username">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-input login-form" type="text" placeholder="Enter username" name="username">
                 </div>
-                <input class="input-submit" type="submit" value="Register">
+                <input class="form-button login-form" type="submit" value="Register">
             </form>
             <div class="separation">
                 <hr class="separation-hr"/>

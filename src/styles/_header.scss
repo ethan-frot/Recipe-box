@@ -22,6 +22,7 @@
     a {
       all: unset;
       cursor: pointer;
+      font-weight: 500;
     }
   }
 
@@ -29,19 +30,21 @@
     display: flex;
     align-items: center;
     background-color: #9d968b;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 10px;
-    font-weight: 400;
+    font-weight: 600;
   }
 
   .nav-connected {
     display: flex;
     align-items: center;
     background-color: #d39738;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 10px;
     p {
-      font-weight: 400;
+      font-weight: 600;
     }
   }
 }

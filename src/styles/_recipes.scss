@@ -1,7 +1,157 @@
+.recipe-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 80vw;
+  margin-bottom: 30px;
+
+  .new-recipe-button {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #d39738;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.4);
+
+    i {
+      padding: 10px;
+    }
+  }
+}
+
+.recipe-header-title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+
+  .title {
+    font-size: 30px;
+  }
+}
+
 .no-recipes {
   display: flex;
   padding: 30px;
   background-color: #9d968b;
   border-radius: 50px;
-  color: black;
+  color: #2d2b2b;
+  box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.recipe-img {
+  width: 80vw;
+  height: 400px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  &-title {
+    font-family: "Gatile";
+    font-size: 50px;
+    background-color: #2d2b2b;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.interactive-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  .interactive-button {
+    all: unset;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #2d2b2b;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.4);
+
+    i {
+      padding: 10px;
+      color: #fff3e0;
+    }
+
+    &:hover {
+      background-color: #fff3e0;
+
+      i {
+        color: #2d2b2b;
+      }
+    }
+  }
+}
+
+.recipe-title {
+  font-family: "Gatile";
+  font-size: 50px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.recipe-component {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.styled-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.order-items {
+  position: relative;
+  padding-left: 60px;
+  padding-top: 8px;
+  margin-bottom: 50px;
+}
+
+.order-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gatile";
+  border: 2px solid #d39738;
+  border-radius: 20px;
+}
+
+.recipe-ingredient-container {
+  background-color: hsl(37, 64%, 54%);
+  border-radius: 20px;
+  padding: 10px;
+
+  hr {
+    border-color: #fff3e0;
+    margin: 20px;
+  }
+
+  .ingredient-title,
+  .ingredient {
+    color: #fff3e0;
+  }
+
+  .ingredients-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    gap: 20px;
+  }
 }

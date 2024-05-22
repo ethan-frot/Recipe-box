@@ -8,15 +8,15 @@ if (!isset($_SESSION['id'])) {
 <?php require_once 'parts/header.php'; ?>
 
 <div class="container">
-  <h1>Nouvelle recette</h1>
+  <h1 class="form-title">New recipe</h1>
 
   <form action="scripts/create-recipe-script.php" method="POST">
     <div class="container">
-      <input required class="input-text" type="text" placeholder="Nom de la recette" name="recipe_name">
-      <input required class="input-text" type="text" placeholder="Lien de l'image" name="recipe_img">
-      <textarea required class="input-text" placeholder="liste d'ingrédients (séparez avec un ; )" name="recipe_ingredients"></textarea>
-      <textarea required class="input-text" placeholder="étapes (séparez avec un ; )" name="recipe_steps"></textarea>
-      <input class="input-submit" type="submit" value="Envoyer">
+      <input required class="form-input" type="text" placeholder="Name" name="recipe_name">
+      <input required class="form-input" type="text" placeholder="Link image (https://)" name="recipe_img">
+      <textarea required rows="4" class="form-input" placeholder="Ingredients (Separate with semi-colon)" name="recipe_ingredients"></textarea>
+      <textarea required rows="4" class="form-input" placeholder="Steps (Separate with semi-colon)" name="recipe_steps"></textarea>
+      <input class="form-button" type="submit" value="Send">
     </div>
   </form>
 </div>

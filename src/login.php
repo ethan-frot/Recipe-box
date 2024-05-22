@@ -3,19 +3,18 @@
     <div class="container">
         <div class="wrap-container">
             <div class="left-container">
-                <img class="login-img" src="assets/login.jpg">
+                <div class="login-img" style="background-image: url('./assets/login.jpg');"></div>
                 <h1 class="title">Login page</h1>
-                <p class="login-subtitle">By login in here, you will be able to see and add your recipes</p>
             </div>
             <div class="vertical-line"></div>
             <div class="right-container">
-                <h1 class="title">Recipe box</h1>
+                <h1 class="form-title">Recipe box</h1>
                 <form class="form" action="scripts/login-script.php" method="POST">
                     <div class="input-container">
-                        <label for="username">Username</label>
-                        <input class="input-text" type="text" placeholder="Enter username" name="username">
+                        <label class="form-label" for="username">Username</label>
+                        <input class="form-input login-form" type="text" placeholder="Enter username" name="username">
                     </div>
-                    <input class="input-submit" type="submit" value="Login">
+                    <input class="form-button login-form" type="submit" value="Login">
                 </form>
                 <div class="separation">
                     <hr class="separation-hr"/>
