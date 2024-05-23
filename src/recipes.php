@@ -10,8 +10,12 @@ if (!isset($_SESSION['id'])) {
 <?php
 // Connect to db
 $connectDataBase = new PDO("mysql:host=db;dbname=recipes", "root", "admin");
-// Prepare request
-$request = $connectDataBase->prepare("SELECT * FROM recipes WHERE user_id = :user_id ORDER BY `id` DESC");
+// Determine the current order direction
+$order = isset($_GET['order']) && $_GET['order'] === 'asc' ? 'asc' : 'desc';
+// Determine the opposite order
+$toggleOrder = $order === 'asc' ? 'desc' : 'asc';
+// Prepare request 
+$request = $connectDataBase->prepare("SELECT * FROM recipes WHERE user_id = :user_id ORDER BY `id` $order");
 // Bind params
 $request->bindParam(':user_id', $_SESSION['id']);
 // Execute request
@@ -25,7 +29,12 @@ $recipes = $request->fetchAll(PDO::FETCH_ASSOC);
         <div class="recipe-header-container">
             <h1 class="recipe-header-title">Welcome <span class="title"><?php echo $_SESSION['username'] ?></span>, <br>you
                 can see your recipes here</h1>
-            <a class="new-recipe-button" href="./new-recipe.php"><i class="fa-regular fa-square-plus"></i></a>
+                <div class="recipe-header-button-container">
+                    <a href="?order=<?php echo $toggleOrder; ?>" class="recipe-header-button">
+                        <?php echo $order === 'asc' ? '<i class="fa-solid fa-arrow-up-wide-short"></i>' : '<i class="fa-solid fa-arrow-down-short-wide"></i>'; ?>
+                    </a>  
+                    <a class="recipe-header-button" href="./new-recipe.php"><i class="fa-regular fa-square-plus"></i></a> 
+                </div>
         </div>
         <div class="recipes-container">
             <?php if (!$recipes) : ?>
