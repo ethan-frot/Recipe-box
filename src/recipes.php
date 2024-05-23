@@ -29,16 +29,16 @@ $recipes = $request->fetchAll(PDO::FETCH_ASSOC);
         <div class="recipe-header-container">
             <h1 class="recipe-header-title">Welcome <span class="title"><?php echo $_SESSION['username'] ?></span>, <br>you
                 can see your recipes here</h1>
-                <div class="recipe-header-button-container">
-                    <a href="?order=<?php echo $toggleOrder; ?>" class="recipe-header-button">
-                        <?php echo $order === 'asc' ? '<i class="fa-solid fa-arrow-up-wide-short"></i>' : '<i class="fa-solid fa-arrow-down-short-wide"></i>'; ?>
-                    </a>  
-                    <a class="recipe-header-button" href="./new-recipe.php"><i class="fa-regular fa-square-plus"></i></a> 
-                </div>
+            <div class="recipe-header-button-container">
+                <a href="?order=<?php echo $toggleOrder; ?>" class="recipe-header-button">
+                    <?php echo $order === 'asc' ? '<i class="fa-solid fa-arrow-up-wide-short"></i>' : '<i class="fa-solid fa-arrow-down-short-wide"></i>'; ?>
+                </a>
+                <a class="recipe-header-button" href="./new-recipe.php"><i class="fa-regular fa-square-plus"></i></a>
+            </div>
         </div>
         <div class="recipes-container">
             <?php if (!$recipes) : ?>
-                <a href="./new-recipe.php" class="no-recipes"> There is no recipe, add one to see your recipes</a>
+                <a href="./new-recipe.php" class="no-recipes">There is no recipe, click here to add one</a>
             <?php else : ?>
             <?php foreach ($recipes as $recipe) : ?>
                 <div class="recipe-img" style="background-image: url('<?= $recipe['image_src'] ?>')">
