@@ -17,6 +17,14 @@
     i {
       padding: 10px;
     }
+
+    &:hover {
+      background-color: #2d2b2b;
+
+      i {
+        color: #d39738;
+      }
+    }
   }
 }
 

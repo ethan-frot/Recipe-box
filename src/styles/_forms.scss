@@ -1,3 +1,10 @@
+.form-title-container {
+  position: relative;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+}
+
 .form-title {
   font-family: "Gatile";
   font-size: 32px;
@@ -20,6 +27,31 @@
 
   &:hover {
     background-color: #d39738;
+  }
+}
+
+.form-return-button {
+  all: unset;
+  position: absolute;
+  left: 0;
+  border: 2px solid #d39738;
+  border-radius: 50px;
+  width: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #d39738;
+
+    i {
+      color: #2d2b2b;
+    }
+  }
+
+  i {
+    color: #d39738;
   }
 }
 
