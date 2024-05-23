@@ -44,7 +44,7 @@ $recipes = $request->fetchAll(PDO::FETCH_ASSOC);
                             <i class="fa-solid fa-clone"></i>
                         </a>
                         <a class="interactive-button"
-                           href="./scripts/remove-recipe-script.php?id=<?= $recipe['id'] ?>">
+                           href="./scripts/delete-recipe-script.php?id=<?= $recipe['id'] ?>">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </div>
