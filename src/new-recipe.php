@@ -18,7 +18,8 @@ if (!isset($_SESSION['id'])) {
         <form action="scripts/create-recipe-script.php" method="POST">
             <div class="container">
                 <input required class="form-input" type="text" placeholder="Name" name="recipe_name">
-                <input required class="form-input" type="text" placeholder="Link image (https://)" name="recipe_img">
+                <input required class="form-input" type="text" placeholder="Link image (https://)" name="recipe_img"
+                       type="url" pattern="https://.*">
                 <textarea required rows="4" class="form-input" placeholder="Ingredients (Separate with semi-colon)"
                           name="recipe_ingredients"></textarea>
                 <textarea required rows="4" class="form-input" placeholder="Steps (Separate with semi-colon)"

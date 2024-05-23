@@ -34,6 +34,7 @@ $recipes = $request->fetch(PDO::FETCH_ASSOC);
                 <input required class="form-input" type="text" placeholder="Name" name="recipe_name"
                        value="<?= $recipes['name']; ?>">
                 <input required class="form-input" type="text" placeholder="Link image (https://)" name="recipe_img"
+                       type="url" pattern="https://.*"
                        value="<?= $recipes['image_src']; ?>">
                 <textarea required rows="4" class="form-input" placeholder="Ingredients (Separate with semi-colon)"
                           name="recipe_ingredients"><?= $recipes['ingredients']; ?></textarea>
