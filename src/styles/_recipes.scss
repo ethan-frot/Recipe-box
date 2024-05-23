@@ -35,16 +35,25 @@
 
   .title {
     font-size: 30px;
+    letter-spacing: 6px;
   }
 }
 
 .no-recipes {
   display: flex;
-  padding: 30px;
-  background-color: #9d968b;
-  border-radius: 50px;
-  color: #2d2b2b;
+  padding: 20px;
+  background-color: #d39738;
+  border-radius: 10px;
+  color: #fff3e0;
   box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #2d2b2b;
+    color: #d39738;
+  }
 }
 
 .recipe-img {

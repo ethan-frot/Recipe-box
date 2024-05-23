@@ -41,9 +41,9 @@ if (!isset($_SESSION['id'])) {
         <?php endif; ?>
 
         <?php if (isset($_SESSION['id'])) : ?>
-            <div class="nav-connected"><p> Utilisateur connecté </p></div>
+            <div class="nav-connected"><p> User connected </p></div>
         <?php else : ?>
-            <div class="nav-connected"><p> Utilisateur non connecté </p></div>
+            <div class="nav-connected"><p> User disconnected </p></div>
         <?php endif ?>
     </nav>
 </div>

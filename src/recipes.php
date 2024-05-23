@@ -29,7 +29,7 @@ $recipes = $request->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="recipes-container">
             <?php if (!$recipes) : ?>
-                <span class="no-recipes"> Il n'y a aucune recette </span>
+                <a href="./new-recipe.php" class="no-recipes"> There is no recipe, add one to see your recipes</a>
             <?php else : ?>
             <?php foreach ($recipes as $recipe) : ?>
                 <div class="recipe-img" style="background-image: url('<?= $recipe['image_src'] ?>')">

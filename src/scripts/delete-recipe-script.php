@@ -11,4 +11,4 @@ $request->bindParam(':id', $id);
 // Execute request
 $request->execute();
 
-header("Location: ../recipes.php");
+header("Location: ../recipes.php?success=Deleted with success !");
